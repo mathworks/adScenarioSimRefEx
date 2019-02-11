@@ -1,4 +1,4 @@
-# Overtake-Manuever
+# Overtake-Maneuver
 Overtake maneuver strategy allows a smart vehicle (an independent agent), to safely overtake the vehicles ahead of it by taking decisions based on the belief/knowledge it has about its environment.
 This demo showcases the Simulink model architecture for creating and simulating synthetic scenarios by reading as input the scenario file saved using the Driving Scenario Designer (DSD) application. This architecture allows creation of **synthetic scenarios**, by:
   * Marking an actor in the scenario as an autonomous smart actor.
@@ -17,4 +17,4 @@ To run this model, you need: MATLAB, Automated Driving System Toolbox (ADST), Mo
 The model required a scenario file saved using the DSD application. A sample scenario file *scenarioInput.mat* is already included in the repository. You can run the Simulink model as it is.
 
 ## Further documentation
-See the Overtake-Manuever.pdf file for detailed documentation covering - Scenario description, new scenario generation, Simulink model description, configuration and scenario visualization.
+See the Overtake-Maneuver.pdf file for detailed documentation covering - Scenario description, new scenario generation, Simulink model description, configuration and scenario visualization.
