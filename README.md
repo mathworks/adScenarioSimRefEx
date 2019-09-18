@@ -21,4 +21,4 @@ The model needs a scenario file saved using the DSD application. A sample scenar
 Run the Simulink model **mOvertakeManeuver.slx** and see the visualization.
 
 ## Further documentation
-See the file [Overtake-Maneuver.pdf](https://github.com/mathworks/Overtake-Maneuver/blob/master/Overtake-Maneuver.pdf) for detailed documentation covering - Scenario description, new scenario generation, Simulink model description, configuration and scenario visualization.
+See the file [Overtake-Maneuver.pdf](https://github.com/mathworks/adScenarioSimRefEx/blob/master/Overtake-Maneuver.pdf) for detailed documentation covering - Scenario description, new scenario generation, Simulink model description, configuration and scenario visualization.
