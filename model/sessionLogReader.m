@@ -1,7 +1,7 @@
 classdef sessionLogReader < ...
-        matlabshared.tracking.internal.fusion.SimulinkBusUtilities ...
+        matlabshared.tracking.internal.SimulinkBusUtilities ...
         & matlab.system.mixin.CustomIcon ...
-        & matlab.system.mixin.internal.SampleTime
+        & matlab.system.mixin.SampleTime
     % sessionLogReader Read actor poses and road data from a recorded
     % driving scenario
     %
@@ -208,7 +208,8 @@ classdef sessionLogReader < ...
             % Implement algorithm. Calculate y as a function of input u and
             % discrete states.
             % Find the data index based on the simulation time
-            obj.pCurrentTime = obj.pCurrentTime + getSampleTime(obj);
+            sampleTimeSpecification = getSampleTime(obj);
+            obj.pCurrentTime = obj.pCurrentTime + sampleTimeSpecification.SampleTime;
             while abs(obj.pActors(obj.pCurrentIndex).SimulationTime - obj.pCurrentTime) > 1e-4
                 if ~obj.isEndOfData()
                     obj.pCurrentIndex = obj.pCurrentIndex + 1;
@@ -353,7 +354,7 @@ classdef sessionLogReader < ...
             % Return false if property is visible based on object
             % configuration, for the command line and System block dialog
             
-            flag = isInactivePropertyImpl@matlabshared.tracking.internal.fusion.SimulinkBusUtilities(obj,prop);
+            flag = isInactivePropertyImpl@matlabshared.tracking.internal.SimulinkBusUtilities(obj,prop);
             hasActor = strcmpi(obj.SmartActorSource,'Input port');
             
             if strcmp(prop,'SmartActorID') && hasActor
@@ -391,7 +392,7 @@ classdef sessionLogReader < ...
             % Set properties in structure s to values in object obj
             
             % Set public properties and states
-            s = saveObjectImpl@matlabshared.tracking.internal.fusion.SimulinkBusUtilities(obj);
+            s = saveObjectImpl@matlabshared.tracking.internal.SimulinkBusUtilities(obj);
             
             % Set private and protected properties
             s.pActors               = obj.pActors;
@@ -429,7 +430,7 @@ classdef sessionLogReader < ...
             obj.pLaneBoundariesSize = s.pLaneBoundariesSize;
             
             % Set public properties and states
-            loadObjectImpl@matlabshared.tracking.internal.fusion.SimulinkBusUtilities(obj,s,wasLocked);
+            loadObjectImpl@matlabshared.tracking.internal.SimulinkBusUtilities(obj,s,wasLocked);
         end
         
         %% Simulink functions
@@ -515,7 +516,7 @@ classdef sessionLogReader < ...
         
         function [out, varargout] = getOutputDataTypeImpl(obj)
             % Return data type for each output port
-            [out,busTypeLaneBoundaries,busTypeLaneMarkings] = getOutputDataTypeImpl@matlabshared.tracking.internal.fusion.SimulinkBusUtilities(obj);
+            [out,busTypeLaneBoundaries,busTypeLaneMarkings] = getOutputDataTypeImpl@matlabshared.tracking.internal.SimulinkBusUtilities(obj);
             
             % Set the simulation to stop at the latest time stamp or
             % earlier while keeping the Dirty flag state
@@ -950,7 +951,7 @@ classdef sessionLogReader < ...
                 'PropertyList', {'LaneBoundaries', 'AllBoundaries', ...
                 'LaneBoundaryDistance','LaneBoundaryLocation',...
                 'NumLanes','LaneMarkings'});
-            busUtil = getPropertyGroupsImpl@matlabshared.tracking.internal.fusion.SimulinkBusUtilities;
+            busUtil = getPropertyGroupsImpl@matlabshared.tracking.internal.SimulinkBusUtilities;
             busPropList = busUtil.PropertyList;
             busPropList = [busPropList {'BusName2Source','BusName2','BusName3Source','BusName3'}];
             busUtil.PropertyList = busPropList;
