@@ -11,7 +11,7 @@ This demo showcases a Simulink model architecture for creating and simulating sy
 Configuration parameters can be set for individual actors to observe the variations in the behavior. The plan algorithm in the smart actor supports overtake maneuver on straight road.
 
 ## MATLAB Toolbox dependencies
-This model has been tested with MATLAB R2018b. 
+This model has been tested with MATLAB R2019b. The version tested with MATLAB R2018b and R2019a is available with release tag [v1.0-MATLAB19a](https://github.com/mathworks/adScenarioSimRefEx/tree/v1.0-MATLAB19a).
 
 To run this model, you need: MATLAB, Automated Driving System Toolbox (ADST), Model Predictive Control Toolbox, Simulink, Simulink Coder, and Stateflow.
 
