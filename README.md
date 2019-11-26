@@ -1,4 +1,7 @@
 # Automated Driving Scenario Simulation Reference Example (Overtake Maneuver)
+
+[![View Automated Driving Scenario Simulation Reference Example on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/70265-automated-driving-scenario-simulation-reference-example)
+
 Overtake maneuver strategy allows a smart vehicle (an independent agent), to safely overtake the vehicles ahead of it by taking decisions based on the belief/knowledge it has about its environment.
 
 This demo showcases a Simulink model architecture for creating and simulating synthetic scenarios. It reads as input the scenario file saved using the Driving Scenario Designer (DSD) application. This architecture allows creation of **synthetic scenarios**, by:
